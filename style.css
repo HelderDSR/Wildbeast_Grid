@@ -22,7 +22,7 @@ a {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   border-radius: 5px;
 }
 
@@ -238,6 +238,7 @@ P {
   align-content: start;
   padding: 30px;
   gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 /* FOOTER */
@@ -304,13 +305,10 @@ P {
   .sidenav {
     position: relative;
     overflow-x: auto;
-    /* ALGUNS BROWSERS BUGAM A BARRA, UTILIZAR CÓDIGO A BAIXO*/
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 
   /* SETA BARRA DE ROLAGEM */
-  
+
   .sidenav::after {
     content: '→';
     position: absolute;
@@ -329,5 +327,11 @@ P {
   }
   to {
     right: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: auto;
   }
 }
